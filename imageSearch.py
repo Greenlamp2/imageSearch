@@ -4,7 +4,7 @@ import cv2
 
 
 import pyautogui
-from PIL import ImageGrab, Image
+from PIL import ImageGrab
 
 
 class ImageSearch:
@@ -62,7 +62,6 @@ class ImageSearch:
         template = cv2.imread(path, 0)
         return template.shape
 
-
     def lookup(self, path, loop=True):
         pos = self.imagesearch(path)
         while loop and pos[0] == -1:
@@ -102,7 +101,6 @@ class ImageSearch:
         while True:
             screen = np.array(ImageGrab.grab())
             pos = self.lookAll(path)
-            print(len(pos))
             regions = []
             if pos:
                 for p in pos:
